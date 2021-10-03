@@ -13,11 +13,10 @@ contract BurnPool is IBurnPool {
 
     constructor(
         INabeEmitter _nabeEmitter,
-        INabe _nabe,
         uint256 _pid
     ) {
         nabeEmitter = _nabeEmitter;
-        nabe = _nabe;
+        nabe = _nabeEmitter.nabe();
         pid = _pid;
     }
 

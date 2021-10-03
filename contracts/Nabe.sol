@@ -10,6 +10,7 @@ contract Nabe is FungibleToken, INabe {
 
     constructor() FungibleToken("Nabe", "NABE", "1") {
         emitter = INabeEmitter(msg.sender);
+        _mint(msg.sender, 3000 * 1e18);
     }
 
     modifier onlyEmitter {

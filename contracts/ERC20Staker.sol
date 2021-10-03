@@ -13,10 +13,9 @@ contract ERC20Staker is NabeDividend, IERC20Staker {
 
     constructor(
         INabeEmitter nabeEmitter,
-        INabe nabe,
         uint256 pid,
         IERC20 _token
-    ) NabeDividend(nabeEmitter, nabe, pid) {
+    ) NabeDividend(nabeEmitter, pid) {
         token = _token;
     }
 

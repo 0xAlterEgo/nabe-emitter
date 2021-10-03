@@ -30,7 +30,7 @@ describe("Nabe", () => {
 
     context("new Nabe", async () => {
         it("has given data", async () => {
-            expect(await nabe.totalSupply()).to.be.equal(0)
+            expect(await nabe.totalSupply()).to.be.equal(expandTo18Decimals(3000))
             expect(await nabe.name()).to.be.equal(name)
             expect(await nabe.symbol()).to.be.equal(symbol)
             expect(await nabe.decimals()).to.be.equal(18)
@@ -38,7 +38,7 @@ describe("Nabe", () => {
         })
 
         it("check the deployer balance", async () => {
-            expect(await nabe.balanceOf(admin.address)).to.be.equal(0)
+            expect(await nabe.balanceOf(admin.address)).to.be.equal(expandTo18Decimals(3000))
         })
 
         it("data for permit", async () => {
