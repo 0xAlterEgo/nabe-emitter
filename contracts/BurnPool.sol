@@ -1,18 +1,28 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-import "./interfaces/IBurnPool.sol";
+import "./interfaces/INabeEmitter.sol";
 import "./interfaces/INabe.sol";
+import "./interfaces/IBurnPool.sol";
 
 contract BurnPool is IBurnPool {
 
-    INabe public nabe;
+    INabeEmitter public immutable nabeEmitter;
+    INabe public immutable nabe;
+    uint256 public override immutable pid;
 
-    constructor(INabe _nabe) {
+    constructor(
+        INabeEmitter _nabeEmitter,
+        INabe _nabe,
+        uint256 _pid
+    ) {
+        nabeEmitter = _nabeEmitter;
         nabe = _nabe;
+        pid = _pid;
     }
 
     function burn() override external {
+        nabeEmitter.updatePool(pid);
         nabe.burn(nabe.balanceOf(address(this)));
     }
 }

@@ -2,12 +2,12 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "./interfaces/IERC20Dividend.sol";
+import "./interfaces/IERC20Staker.sol";
 import "./interfaces/INabeEmitter.sol";
 import "./interfaces/INabe.sol";
 import "./NabeDividend.sol";
 
-contract ERC20Dividend is NabeDividend, IERC20Dividend {
+contract ERC20Staker is NabeDividend, IERC20Staker {
     
     IERC20 public token;
 

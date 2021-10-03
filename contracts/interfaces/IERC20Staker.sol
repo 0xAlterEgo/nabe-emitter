@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 import "./INabeDividend.sol";
 
-interface IERC20Dividend is INabeDividend {
+interface IERC20Staker is INabeDividend {
     
     event Stake(address indexed owner, uint256 amount);
     event Unstake(address indexed owner, uint256 amount);
