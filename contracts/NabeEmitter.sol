@@ -22,10 +22,11 @@ contract NabeEmitter is Ownable, INabeEmitter {
     uint256 public override totalAllocPoint;
 
     constructor(
+        INabe _nabe,
         uint256 _emitPerBlock,
         uint256 _startBlock
     ) {
-        nabe = new Nabe();
+        nabe = _nabe;
         emitPerBlock = _emitPerBlock;
         startBlock = _startBlock;
     }

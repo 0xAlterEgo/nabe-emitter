@@ -1,13 +1,9 @@
 # nabe-emitter
-Nabe emitter Contract on BSC
+Nabe emitter Contracts on BSC
+
+- Nabe: https://github.com/nabefinance/nabe
 
 ## BSC
-- DevFundToken: 0x6c1dAFAb34729cF175306cB3E91dc6B37935Ae48
-- NabeEmitter: 0x30c7C748764Eed040377b1cc7D4e10A39C8Fd04B
-- Nabe: 0x4A3c6D19Eef41c069548DC52592A8e1E36D3e16B
-- DevFundStaker: 0xD1471e97edD0bB26Cbfe9D5FEB1026DA478D3F13
-- BurnPool: 0x862BD5f982c4B12FD1B240a93844D8aF8bD65d5f
-- AirdropPool: 0x2B06261c6989EBD7395A39d2De073D77184D52Bf
 
 ## License
 [MIT](LICENSE)

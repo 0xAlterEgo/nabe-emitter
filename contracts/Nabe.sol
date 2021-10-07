@@ -1,20 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "./FungibleToken.sol";
 import "./interfaces/INabe.sol";
-import "./interfaces/INabeEmitter.sol";
 
-contract Nabe is FungibleToken, INabe {
-    INabeEmitter public emitter;
+contract Nabe is Ownable, FungibleToken, INabe {
+
+    address public emitter;
 
     constructor() FungibleToken("Nabe", "NABE", "1") {
-        emitter = INabeEmitter(msg.sender);
         _mint(msg.sender, 3000 * 1e18);
     }
 
-    modifier onlyEmitter {
-        require(msg.sender == address(emitter));
+    function setEmitter(address _emitter) external onlyOwner {
+        emitter = _emitter;
+    }
+
+    modifier onlyEmitter() {
+        require(msg.sender == emitter);
         _;
     }
 
